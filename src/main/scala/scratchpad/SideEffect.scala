@@ -8,6 +8,9 @@ object SideEffect {
 
   def signalSideEffect(): IO[Unit] = IO(println("launch missiles"))
 
+  val a: IO[Double] = IO(Math.random())
+  val b: Double = Math.random()
+
 //  def free(): Free[AppAction, User] = ???
 
   def writer(): Writer[String, Unit] = ???
