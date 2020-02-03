@@ -1,0 +1,13 @@
+out
+*.log
+
+# sbt specific
+dist/*
+target/
+
+## IntelliJ
+*.iml
+.idea
+
+## Mac stuff
+.DS_Store

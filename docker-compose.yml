@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  dev:
+    image: 639347700193.dkr.ecr.ap-southeast-2.amazonaws.com/property-insights/scala-scratchpad-dependencies:latest
+    working_dir: /work
+    command: ./sbt run
+    environment:
+      PORT: 8080
+      APP_NAME: scala-scratchpad-dev
+      BUILD_NUMBER: ${BUILDKITE_BUILD_NUMBER:-1} # Enables CI features (turns off supershell and colours)
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/work
+      - coursier-cache:/root/.cache/coursier
+      - sbt-cache:/root/.sbt
+
+volumes:
+  coursier-cache:
+    external: true
+  sbt-cache:
+    external: true

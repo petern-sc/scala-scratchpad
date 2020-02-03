@@ -1,0 +1,13 @@
+#!/bin/bash
+set -euo pipefail
+
+cd "$(dirname "$0")/.."
+
+trap "docker-compose down --volumes --remove-orphans" 0
+
+docker volume create --name coursier-cache > /dev/null
+docker volume create --name sbt-cache > /dev/null
+
+docker-compose build dev
+
+docker-compose run --rm --service-ports dev "$@"
