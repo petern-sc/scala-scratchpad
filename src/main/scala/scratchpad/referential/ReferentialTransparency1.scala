@@ -4,19 +4,19 @@ import scala.io.StdIn._
 
 object ReferentialTransparency1 extends App {
   def original(): Int = {
-    val first = readInt()
-    val second = readInt()
+    val first = readInt() // 2
+    val second = readInt() // 3
 
-    first + second
+    first + second // 5
   }
 
   def refactored(): Int = {
-    val getNumber = readInt()
+    val getNumber = readInt() // 2
 
     val first = getNumber
     val second = getNumber
 
-    first + second
+    first + second // 4
   }
 
   println(refactored())
