@@ -26,7 +26,6 @@ libraryDependencies ++= Seq(
 
 scalacOptions ++= Seq(
   "-deprecation", // Emit warning and location for usages of deprecated APIs.
-  "-explaintypes", // Explain type errors in more detail.
   "-feature", // Emit warning and location for usages of features that should be imported explicitly.
   "-language:existentials", // Existential types (besides wildcard types) can be written and inferred
   "-language:experimental.macros", // Allow macro definition (besides implementation and application)
