@@ -25,7 +25,7 @@ object StatusTracker extends IOApp {
     }
   }
 
-  def tracker[A](someStream: Stream[IO, A], logger: String => IO[Unit]): Unit = {
+  def tracker[A](someStream: Stream[IO, A], logger: String => IO[Unit]): Stream[IO, A] = {
     Stream.eval(Ref[IO].of(0)).flatMap { count =>
       someStream.chunks.evalTap(c => count.update(_ + c.size))
         .flatMap(Stream.chunk)
