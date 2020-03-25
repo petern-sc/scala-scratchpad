@@ -12,14 +12,14 @@ mainClass in (Compile, run) := Some("toyrobot.Main") //Used from normal sbt
 
 val catsVersion = "2.1.0"
 val catsEffectVersion = "2.0.0"
-val fs2Version = "2.2.1"
 val specs2Version = "4.8.3"
 
 libraryDependencies ++= Seq(
   "org.typelevel"           %% "cats-core"                    % catsVersion,
   "org.typelevel"           %% "cats-free"                    % catsVersion,
   "org.typelevel"           %% "cats-effect"                  % catsEffectVersion,
-  "co.fs2"                  %% "fs2-core"                     % fs2Version,
+  "co.fs2"                  %% "fs2-core"                     % "2.2.1",
+  "io.monix"                %% "monix"                        % "3.1.0",
   "org.specs2"              %% "specs2-core"                  % specs2Version             % "test",
   "org.specs2"              %% "specs2-matcher-extra"         % specs2Version             % "test"
 )
