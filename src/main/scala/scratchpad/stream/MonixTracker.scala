@@ -12,6 +12,7 @@ object MonixTracker {
     frequency: FiniteDuration
   )(implicit scheduler: Scheduler): Observable[A] => Observable[A] =
     (observable: Observable[A]) => {
+
       observable
         .bufferTimed(frequency)
         .mapEval { seq =>

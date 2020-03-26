@@ -3,12 +3,13 @@ package scratchpad.stream
 import cats.effect.concurrent.Ref
 import cats.effect.{Concurrent, Timer}
 import cats.implicits._
-import fs2.{Pipe, Stream}
+import fs2.{Chunk, Pipe, Stream}
 
 import scala.concurrent.duration.FiniteDuration
 
 object Fs2Tracker {
   // Pipe: Stream[F,A] => Stream[F,A]
+  // evalTap: evalMap(x => f(x).map(_ => x))
 
   def apply[F[_]: Concurrent: Timer, A](
     log: Int => F[Unit],
