@@ -3,7 +3,7 @@ package scratchpad.stream
 import cats.effect.concurrent.Ref
 import cats.effect.{Concurrent, Timer}
 import cats.implicits._
-import fs2.{Chunk, Pipe, Stream}
+import fs2.{Pipe, Stream}
 
 import scala.concurrent.duration.FiniteDuration
 

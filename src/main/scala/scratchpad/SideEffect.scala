@@ -4,6 +4,9 @@ import cats.data.Writer
 import cats.effect.IO
 
 object SideEffect {
+  sealed trait AppAction
+  type User = String
+
   def sideEffect(): Unit = println("Hello")
 
   def signalSideEffect(): IO[Unit] = IO(println("launch missiles"))

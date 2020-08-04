@@ -1,10 +1,10 @@
 package toyrobot
 
+import cats.implicits._
 import toyrobot.errors.AppError.{ErrorOr, InvalidCommand, InvalidCoordinate, InvalidDirection}
-import toyrobot.errors.{AppError, AppTry}
+import toyrobot.errors.AppTry
 import toyrobot.models.Command.{Move, Place}
 import toyrobot.models._
-import cats.implicits._
 
 import scala.util.matching.Regex
 

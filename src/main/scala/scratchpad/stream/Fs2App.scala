@@ -1,7 +1,6 @@
 package scratchpad.stream
 
 import cats.effect.{ExitCode, IO, IOApp}
-import cats.implicits._
 import fs2.{Pipe, Stream}
 
 import scala.concurrent.duration._

@@ -1,15 +1,12 @@
 package scratchpad.stream
 
 import cats.effect.ExitCode
-import cats.implicits._
 import monix.eval.{Task, TaskApp}
-import monix.execution.Scheduler
 import monix.reactive.Observable
+
 import scala.concurrent.duration._
 
 object StreamApp extends TaskApp {
-  implicit private val s: Scheduler = scheduler
-
   override def run(args: List[String]): Task[ExitCode] = {
 
     // Prints 1..10 with a 1 second delay
